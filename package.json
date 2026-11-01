@@ -1,0 +1,111 @@
+{
+	"name": "startpozi-search",
+	"displayName": "StartPOZI Search",
+	"description": "Search with StartPOZI (startpozi.com) from VS Code: command palette, context menu, and the built-in VS Code browser.",
+	"version": "0.1.5",
+	"publisher": "startpozi",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/StartPOZI/StartPOZI-Search-VS-Code"
+	},
+	"homepage": "https://startpozi.com",
+	"engines": {
+		"vscode": "^1.55.0"
+	},
+	"categories": [
+		"Other",
+		"Web"
+	],
+	"keywords": [
+		"search",
+		"startpozi",
+		"web",
+		"browser"
+	],
+	"activationEvents": [
+		"onCommand:startpozi.search",
+		"onCommand:startpozi.searchSelection",
+		"onCommand:startpozi.searchInCode",
+		"onCommand:startpozi.openStartPozi"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "startpozi.search",
+				"title": "StartPOZI: Search",
+				"category": "StartPOZI"
+			},
+			{
+				"command": "startpozi.searchSelection",
+				"title": "StartPOZI: Search Selection",
+				"category": "StartPOZI"
+			},
+			{
+				"command": "startpozi.searchInCode",
+				"title": "StartPOZI: Search in Code",
+				"category": "StartPOZI"
+			},
+			{
+				"command": "startpozi.openStartPozi",
+				"title": "StartPOZI: Open StartPOZI",
+				"category": "StartPOZI"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "startpozi.searchSelection",
+					"group": "navigation"
+				},
+				{
+					"when": "editorTextFocus",
+					"command": "startpozi.searchInCode",
+					"group": "navigation"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "startpozi.search",
+				"key": "ctrl+shift+1",
+				"mac": "cmd+shift+1"
+			},
+			{
+				"command": "startpozi.searchInCode",
+				"key": "ctrl+shift+2",
+				"mac": "cmd+shift+2"
+			}
+		],
+		"configuration": {
+			"title": "StartPOZI Search",
+			"type": "object",
+			"properties": {
+				"startpozi.openIn": {
+					"type": "string",
+					"enum": [
+						"integrated",
+						"external"
+					],
+					"enumDescriptions": [
+						"Built-in VS Code browser — results open in a tab right inside the editor (falls back to Simple Browser, then to the system browser if unavailable)",
+						"External program — open in the default system browser (Chrome, Firefox, StartPOZI Browser, etc.)"
+					],
+					"default": "integrated",
+					"description": "Where to open StartPOZI search results."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.55.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0"
+	}
+}
