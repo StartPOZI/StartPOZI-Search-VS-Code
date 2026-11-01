@@ -4,7 +4,7 @@
 	"description": "Search with StartPOZI (startpozi.com) from VS Code: command palette, context menu, and the built-in VS Code browser.",
 	"version": "0.1.5",
 	"publisher": "startpozi",
-	"license": "SEE LICENSE IN LICENSE.md",
+	"license": "Apache-2.0",
 	"icon": "images/icon.png",
 	"repository": {
 		"type": "git",
