@@ -3,6 +3,18 @@
 Search with [startpozi.com](https://startpozi.com) straight from VS Code.
 Results open in the built-in VS Code browser.
 
+## Download & Install
+
+Download the latest `startpozi-search-*.vsix` from
+[**Releases**](https://github.com/StartPOZI/StartPOZI-Search-VS-Code/releases),
+then install it:
+
+```bash
+code --install-extension startpozi-search-0.1.5.vsix
+```
+
+Or in VS Code: Extensions view (`Ctrl+Shift+X`) → `···` → **Install from VSIX...**
+
 ## Features
 
 | Command | What it does |
